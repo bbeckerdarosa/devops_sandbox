@@ -1,0 +1,19 @@
+node {
+    properties([
+        parameters([
+            string(defaultValue: '1', description: 'Quantity of users', name: 'USERS'), 
+            string(defaultValue: '60', description: 'Duration in seconds stress test', name: 'DURATION')
+        ])
+    ])
+    stage('Preparation') {
+      git branch: 'microservice_gatling',
+      credentialsId: 'credencial', 
+      url: 'https://github.com/barbbecker/devops_sandbox.git'
+    }
+
+    stage('Stress Test') {
+       dir("microservice_gatling/"){
+            sh "sbt -Dusers=${params.USERS} -Dduration=${params.DURATION} gatling:test"
+       }
+    }
+} 
