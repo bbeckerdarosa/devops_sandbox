@@ -1,0 +1,10 @@
+---
+- name: Install Redis
+  apt:
+    name: "redis-server={{ version_redis }}"
+    update_cache: yes
+
+- name: Start service redis
+  service:
+    name: redis-server
+    state: started

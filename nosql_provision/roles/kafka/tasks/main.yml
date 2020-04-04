@@ -1,0 +1,17 @@
+---
+- name: Create directory
+  file:
+    path: /opt/Kafka
+    state: directory
+
+- name: Unarchive a file that needs to be downloaded
+  unarchive:
+    src: http://mirror.nbtelecom.com.br/apache/kafka/{{version_kafka}}
+    dest: /opt/Kafka
+    remote_src: yes
+
+- name: Start zoekeeper
+  shell: /opt/Kafka/{{version_kafka}}/bin/zookeeper-server-start.sh /opt/Kafka/{{version_kafka}}/config/zookeeper.properties &
+
+- name: Start kafka server
+  shell: /opt/Kafka/{{version_kafka}}/bin/kafka-server-start.sh /opt/Kafka/{{version_kafka}}/config/server.properties &

@@ -1,0 +1,23 @@
+---
+- name: Add repository
+  shell: echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | tee -a /etc/apt/sources.list.d/cassandra.sources.list
+
+- name: Add cassandra apt key
+  apt_key:
+    url: https://www.apache.org/dist/cassandra/KEYS
+    state: present
+
+- name: Add an apt key public
+  apt_key:
+    keyserver: pool.sks-keyservers.net
+    id: A278B781FE4B2BDA
+
+- name: Install Cassandra
+  apt:
+    name: "cassandra={{ version_cass }}"
+    update_cache: yes
+
+- name: Start service cassandra
+  service:
+    name: cassandra
+    state: started

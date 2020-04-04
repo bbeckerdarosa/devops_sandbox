@@ -1,0 +1,7 @@
+---
+- name: Create an insecure file
+  file:
+    path: /tmp
+    owner: root
+    group: root
+    mode: '1777'
