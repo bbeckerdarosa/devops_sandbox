@@ -1,0 +1,5 @@
+---
+- name: copy project calculator
+  copy:
+    src: ./calculator
+    dest: /home/ubuntu/

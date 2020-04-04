@@ -1,0 +1,15 @@
+[Unit]
+Description=Simple API server written in Go
+After=syslog.target
+
+[Service]
+Type=forking
+User=root
+WorkingDirectory=/home/ubuntu/calculator
+ExecStart=/bin/bash /home/ubuntu/calculator/calculator.sh
+ExecStop=/bin/kill -15 $MAINPID
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

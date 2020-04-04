@@ -1,0 +1,10 @@
+---
+- name: update and upgrade packages
+  apt:
+    upgrade: yes
+    update_cache: yes 
+
+- name: install golang
+  apt:
+    name: golang
+    state: latest

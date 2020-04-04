@@ -1,0 +1,9 @@
+---
+- name: set custom init script
+  copy:
+    src: etc/systemd/system/calculator.service
+    dest: /etc/systemd/system/calculator.service
+    
+- name: enable service calculator
+  shell: systemctl enable calculator && systemctl start calculator
+

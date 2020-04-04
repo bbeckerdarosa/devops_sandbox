@@ -1,0 +1,3 @@
+---
+- name: install gorilla/mux
+  command: go get -u github.com/gorilla/mux
