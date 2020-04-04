@@ -1,0 +1,25 @@
+
+- hosts: all
+
+  tasks:
+   - name: get user
+     command: "whoami"
+     register: user
+
+   - name: update packages
+     become: yes
+     become_user: root
+     apt:
+      update_cache: yes
+
+   - name: install golang
+     become: yes
+     become_user: root
+     apt:
+       name: golang
+       state: latest
+
+   - name: install gorilla/mux
+     become: yes
+     become_user: "{{user.stdout}}"
+     command: "go get -u github.com/gorilla/mux"
