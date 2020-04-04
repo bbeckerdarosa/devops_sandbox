@@ -1,0 +1,26 @@
+{
+    "builders":[
+        {
+            "type": "docker",
+            "image": "golang",
+            "commit": true,
+            "changes": [
+                "EXPOSE 8080",
+                "ENTRYPOINT [\"go\", \"run\", \"calculator.go\"]"
+            ]
+        }
+    ],
+     "provisioners":[
+        {
+            "type": "shell",
+            "inline": ["go get -u github.com/gorilla/mux"]
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "docker-tag",
+            "repository": "barbbecker/calculator-go",
+            "tag": "0.1"
+        }
+    ]
+} 

@@ -1,0 +1,10 @@
+node {
+   stage('Preparation') {
+      git 'https://github.com/barbbecker/devops_sandbox.git'
+      git branch: 'master'
+      userRemoteConfigs: [[credentialsId: 'credential_id', url: 'https://github.com/barbbecker/devops_sandbox.git']]
+   }
+   stage('Bake') {
+     sh 'packer build microservice_go_jenkins/template-packer.json'
+   }
+}

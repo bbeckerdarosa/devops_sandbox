@@ -1,0 +1,5 @@
+node {
+    stage('Launch') {
+        sh 'docker run -p 8080:8080 -d barbbecker/calculator-go:0.1'
+    }
+}
