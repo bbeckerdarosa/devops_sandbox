@@ -1,0 +1,13 @@
+---
+- name: install golang
+  apt:
+    name: golang
+    state: present
+
+- name: install gorilla/mux
+  git:
+    repo: https://github.com/gorilla/mux
+    dest: go/src/github.com/gorilla/mux
+
+- name: start microservice
+  shell: go run calculator.go &

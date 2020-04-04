@@ -1,0 +1,8 @@
+---
+- name: status pid
+  shell: if [ $(pidof calculator) ]; then echo RUNNING; else echo NOT RUNNING; fi;
+  register: status
+
+- name: print status pid
+  debug:
+    msg: "{{status.stdout}}"
