@@ -1,0 +1,26 @@
+node {
+   stage('Preparation') {
+      git branch: 'microservice_go_kubernetes',
+      credentialsId: 'credencial', 
+      url: 'https://github.com/barbbecker/devops_sandbox.git'
+   }
+   stage('Launch') {
+      dir('microservice_go_kubernetes') {
+         sh 'docker build -t bbeckerdarosa/microservice:latest .'
+      }
+   }
+   properties([parameters([string(defaultValue: '', description: 'urlKubernates', name: 'serverUrl', trim: false)])])
+   
+   stage('Apply Kubernetes files') {
+      dir('microservice_go_kubernetes') {
+         withKubeConfig([credentialsId: 'kubernetes-certificate', serverUrl: (params.serverUrl)]) {
+            sh 'kubectl apply -f k8s-deploy/ --namespace=microservice'
+         }
+      }
+   }
+   stage('Run microservice with minikube') {
+      dir('microservice_go_kubernetes') {
+         sh 'minikube service microservice'
+      }
+   }
+} 
