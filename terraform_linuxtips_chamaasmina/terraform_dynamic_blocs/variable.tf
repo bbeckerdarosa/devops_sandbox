@@ -10,3 +10,9 @@ variable "blocks" {
   }))
   description = "List of EBS Blocks"
 }
+
+variable "name" {
+  type        = string
+  default     = "Hello Word Terraform"
+  description = "Testing string template interpolation and directives"
+}

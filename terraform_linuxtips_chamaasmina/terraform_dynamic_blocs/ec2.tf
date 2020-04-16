@@ -24,6 +24,6 @@ resource "aws_instance" "web" {
     }
   }
   tags = {
-    Name = "HelloWorld-Terraform"
+    Name = "Hello, %{ if var.name == "barbara" }${var.name}%{ else }não valeu%{ endif }!"
   }
 }
