@@ -8,7 +8,7 @@ node {
     stage('Preparation') {
       git branch: 'microservice_gatling',
       credentialsId: 'credencial', 
-      url: 'https://github.com/barbbecker/devops_sandbox.git'
+      url: 'https://github.com/bbeckerdarosa/devops_sandbox.git'
     }
 
     stage('Stress Test') {
