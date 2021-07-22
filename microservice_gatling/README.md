@@ -1,35 +1,35 @@
 # Gatling Stress and Chaos Test
 
-## Instruções
+## Instructions
 
-- Para buildar o projeto você precisa ter o [SBT](https://www.scala-sbt.org/) instalado
+- To build the project you need to have [SBT](https://www.scala-sbt.org/) installed
 
-## Buildando o projeto localmente
+## To build the project locally
 
-- Faça o clone do projeto privado em:
+- Clone the public project in:
 
 ```
-    git clone https://github.com/barbbecker/devops_sandbox.git
+    git clone https://github.com/bbeckerdarosa/devops_sandbox.git
 ```
 
-- Para rodar a calculadora digite:
+- To run the calculator, type in the terminal:
 
 ```
     go run calculator.go
 ```
 
-- Para rodar o Gatling test definindo a quantidade de usuários e o tempo, digite o comando:
+- To run the Gatling test defining the quantity of users and the time, type in the terminal:
 
 ```
     sbt -Dusers=${params.USERS} -Dduration=${params.DURATION} gatling:test
 ```
 
-- Substitua `params.USERS` pela quantidade de usuários e `params.DURATION` pelo tempo em segundos que desejar
+- Replace `params.USERS` with quantity of users and `params.DURATION` with time in seconds
 
-- Os resultados estarão disponíveis, acessando os seguintes diretórios:
+- The results will be available accessing the following directories:
 
 `target/gatling/calculatorservicestresstest-{timestamp}/simulation.log`
 
-## Buildando o projeto com o Jenkins
+## To build the project using Jenkins
 
-- Você também pode buildar o projeto com o Jenkins, usando o arquivo `Jenkinsfile`
+- You can to build the project with Jenkins, using the file `Jenkinsfile`
