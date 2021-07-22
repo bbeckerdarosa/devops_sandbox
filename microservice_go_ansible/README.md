@@ -1,28 +1,28 @@
-# Microservice Calculator in Golang with Vagrant provisioning Ansible
+# Microservice Calculator in Golang using Vagrant and Ansible
 
-## Instruções
+## Instructions
 
-- Você precisa instalar o Vagrant.
-- Com o Vagrant instalado, acesse o diretório do projeto.
-- Para iniciar o serviço, inicie o Vagrant como comando:
+- You need install the Vagrant.
+- With the Vagrant installed, access the project directory.
+- To start the service, start the Vagrant using the following command:
 
  ```
     vagrant up
  ```
 
-- O serviço estará disponível em:
+- The service will be available in:
 
 ```
     http://55.55.55.5:8080/
 ```
 
-- Caso desejar parar o serviço, digite o comando:
+- If you wish to stop the service, type the following command:
 
  ```
     vagrant halt
  ```
 
-### Endpoints disponíveis
+### Available Endpoints
 
 #### Sum
 
@@ -54,6 +54,6 @@
     http://55.55.55.5:8080/calc/history
 ```
 
-- *firstNumber* corresponde ao primeiro número a ser calculado
+- *firstNumber* matches the first number to be calculated
 
-- *secondNumber* corresponde ao segundo número a ser calculado
+- *secondNumber* matches the second number to be calculated
