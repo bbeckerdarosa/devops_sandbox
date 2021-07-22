@@ -1,18 +1,18 @@
 ## Microservice Calculator Golang
 
-### Instruções
+### Instructions
 
-- Para rodar o comando a seguir, você precisa instalar o *golang*
+- To run the command below, you need install the *golang*
 
-- Entre na raiz onde está o script go e digite pelo terminal:
+- Enter in the root directory microservice_go/ and type in the terminal:
 
 ```
     go run calculator.go
 ```
 
-- Você poderá abrir o browser de sua preferência e acessar *localhost:8080*
+- You can open the browser and access *localhost:8080*
 
-### Endpoints disponíveis
+### Available Endpoints
 
 #### Sum
 
