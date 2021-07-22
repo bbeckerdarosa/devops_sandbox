@@ -1,45 +1,43 @@
-## Comandos Bash
+## Bash Commands
 
-### Instruções
+### Instructions
 
-- Abra a pasta onde estão os arquivos e digite pelo terminal:
+- Open the folder bash_commands/ and type the command below in the terminal:
  
 ``` 
- chmod a+x {nome_arquivo}
+ chmod a+x {file_name}
 ``` 
-- Este comando dará a permissão necessária para rodar o script
+- This command will give need permission to run the script
 
-- Você pode rodar 3 scripts:
+- You can run 3 scripts:
 
-*Calculadora simples*
+*Simple calculator*
 
-*Script para zipar pastas*
+*Script to zip folders*
 
-*Script para listar as ENV_VARS*
+*Script to list the environment variables:ENV_VARS*
 
+ #### Calculator
 
- #### Calculadora
-
-- Digite o seguinte comando pelo terminal:
+- Enter the following command in the terminal:
 
 ```
     ./calculator.sh
 ```
  
-- E instruções vão ser printadas no terminal para continuar.
+- And the instructions will be show in the terminal to continue.
 
+#### Zip Folders
 
-#### Zipar arquivos
-
-- Ao digitar este comando, todas as pastas vão ser zipadas e enviadas para a pasta backup:
+- When typing this command, every folders will be zip and to send to backup folder:
 
 ```
     ./script_zip.sh
 ```
 
- #### Listar ENV_VARS
+ #### List envionment variables ENV_VARS
  
-- Digite o comando:
+- Enter the command below in the terminal:
 
 ```
     ./script_var.sh
