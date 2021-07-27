@@ -1,22 +1,22 @@
-# Packer config file for backing a docker image of microservice Calculator in Golang
+# Microservice Calculator in Golang using Packer and Docker
 
-## Instruções
+## Instructions
 
-- Você precisa instalar o Packer.
-- Como Packer instalado, acesse o diretório do projeto.
-- Para fazer o build da imagem docker configurada com o Packer, digite o comando:
+- You need to install the Packer.
+- With the Packer installed, access the project directory.
+- To do the image build docker configured with Packer, type the following command:
 
 ```
     packer build template-packer.json
 ```
 
-- Para rodar a imagem docker, digite:
+- To run the Docker image, type the following command:
 
 ```
     docker run -p 8080:8080 barbbecker/calculator-go:0.1
 ```
 
-### Endpoints disponíveis
+### Available Endpoints
 
 #### Sum
 
@@ -48,6 +48,6 @@
     http://localhost:8080/calc/history
 ```
 
-- *firstNumber* corresponde ao primeiro número a ser calculado
+- *firstNumber* matches the first number to be calculated
 
-- *secondNumber* corresponde ao segundo número a ser calculado
+- *secondNumber* matches the second number to be calculated
