@@ -1,46 +1,46 @@
-# NoSQL 
+# Provision NoSQL using Ansible and Docker 
 
-- Roles Ansible customizados para provisionamento
+- Roles Ansible customized to provisioning
 
 ## ROLES
 
-- Os seguintes arquivos podem ser encontrados no diretório `roles`
+- The following files can be found at the directory `roles`
 
 ### base
-    - Update do Sistema Operacional
+    - Operating System Update
 
 ### jdk
-    - Responsável por instalar o JDK 8, para trabalhar com o Kafka e Cassandra
+    - Responsible for installing JDK 8, to work with Kafka and Cassandra
 
 ### redis
-    - Responsável por instalar o redis e startar o serviço do redis
+    - Responsible for installing redis and starting the redis service
 
 ### elasticsearch
-    - Responsável por instalar o apt-transport-https, elasticsearch e startar o serviço do elasticsearch
+    - Responsible for installing apt-transport-https, elasticsearch and starting the elasticsearch service
   
 ### cass
-    - Responsável por instalar o apt-transport-https, cassandra e startar o serviço do Cassandra
+    - Responsible for installing apt-transport-https, cassandra and starting the Cassandra service
 
 ### kafka
-    - Responsável por instalar o Zookeeper, extrair o Kafka para o caminho /opt/kafka/ e startar o serviço do Kafka
+    - Responsible for installing Zookeeper, extracting Kafka to /opt/kafka/ path and starting Kafka service
 
-## Instruções para rodar em um container Docker
+## Instructions for running in a Docker container
 
-- Você deverá acessar o diretório onde está seu arquivo `playbook.yml` do Ansible
+- You should access the directory where your file is `playbook.yml`
 
-- Abra o terminal e digite o comando:
+- Open the terminal and type the command:
 
 ```
     docker build -t barbbecker/tema17 .
 ```
 
-- Este comando irá buildar a imagem com o Dockerfile
-- Em seguida, digite o comando:
+- This command will build the image with the Dockerfile
+- Then enter the command:
 
 ```
     sudo docker run -v "$(pwd)":/tmp --workdir="/tmp" -it barbbecker/tema17
 ```
 
-- Este comando passará seus arquivos para dentro do container e executará as tasks de cada /role do ansible que está no `playbook.yml`
+- This command will pass your files into the container and to run the tasks of each ansible /role that is in the `playbook.yml`
 
-*Utilizei este repositório como exemplo: `https://github.com/William-Yeh/docker-ansible`*
+*I used this repository as an example: `https://github.com/William-Yeh/docker-ansible`*
