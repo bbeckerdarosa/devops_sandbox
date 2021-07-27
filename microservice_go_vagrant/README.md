@@ -1,49 +1,49 @@
-# Microservice Calculator in Golang with Vagrant
+# Microservice using Vagrant
 
-## Instruções
+## Instructions
 
-- Você precisa instalar o Vagrant.
-- Com o Vagrant instalado, acesse o diretório do projeto.
-- Para iniciar a VM digite no terminal:
+- You need to install the Vagrant.
+- With the Vagrant installed, access the project directory.
+- To start the VM, type the following command:
 
 ```
     vagrant up
 ```
 
-- Para entrar na VM digite:
+- To enter in VM type the following command:
 
 ```
     vagrant ssh
 ```
 
-- Para rodar o microservice em Golang dentro da VM, digite:
+- To run the microservice in Golang inside the VM, type the following command:
 
 ```
     ./script_run_microservice.sh
 ```
 
-- Ao rodar, você terá 3 opções:
+- To run, you will be 3 options:
 
-*1 - Iniciar a calculadora*
+*1 - Start the calculator*
 
-*2 - Parar a calculadora*
+*2 - Stop the calculator*
 
-*3 - Verificar o status da calculadora (RUNNING | NOT RUNNING)*
+*3 - To check the status of the calculator (RUNNING | NOT RUNNING)*
 
 
-- Para sair da VM, digite:
+- To go out inside VM, type in terminal:
 
 ```
     logout
 ```
 
-- Caso você queira excluir a VM, basta digitar:
+- If you want to delete the VM, just type:
 
 ```
     vagrant destroy
 ```
 
-### Endpoints disponíveis
+### Available Endpoints
 
 #### Sum
 
@@ -75,7 +75,7 @@
     http://55.55.55.5:8080/calc/history
 ```
 
-- *firstNumber* corresponde ao primeiro número a ser calculado
+- *firstNumber* matches the first number to be calculated
 
-- *secondNumber* corresponde ao segundo número a ser calculado
+- *secondNumber* matches the second number to be calculated
 
