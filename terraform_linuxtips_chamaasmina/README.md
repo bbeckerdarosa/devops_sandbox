@@ -1,14 +1,17 @@
-# Descomplicando Terraform - Turma #ChamaAsMina
-## Instruções usando provider AWS
-- Antes de iniciar o terraform, você deverá exportar sua access e secret key para acesso a sua conta aws:
+# Uncomplicating Terraform - #ChamaAsMina Class
+## Instructions using AWS provider
+
+- Before starting terraform, you must export your access and secret key to access your aws account:
+
 ```
-export AWS_ACCESS_KEY_ID="sua_access_key"
+export AWS_ACCESS_KEY_ID="your_access_key"
 ```
 ```
-export AWS_SECRET_ACCESS_KEY="sua_secret_key"
+export AWS_SECRET_ACCESS_KEY="your_secret_key"
 ```
 
-- Com isso, você conseguirá iniciar o terraform:
+- With that, you'll be able to start the terraform:
+
 ```
 terraform init
 ```
