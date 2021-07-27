@@ -1,53 +1,53 @@
 ## Python
 
-### Instruções
+### Instructions
 
-- Para rodar os comandos a seguir, você precisa instalar o *python*
+- To run the following commands, you need to install *python*
 
-#### Listar variáveis de ambiente
+#### List environment variables
 
-- Digite pelo terminal o comando:
+- Enter the command at the terminal:
 
 ```
     python env_service1.py
 ```
 
-- Abra o browser e coloque na url:
+- Open the browser and put in the url:
 
 ```
     http://localhost:8080/conf/env
 ```
 
-#### Criar variável de ambiente
+#### Create environment variable
 
-- Digite pelo terminal o comando:
+- Enter the command in the terminal:
 
 ```
     python create_service2.py
 ```
 
-- Abra o postman ou browser e coloque na url:
+- Open postman or browser and put in the url:
 
 ```
     http://localhost:8080/env/{env_nome}/{env_var}
 ```
 
-- Método POST
-- Substitua os nomes *env_nome* e *env_var* para criar sua variável.
+- POST method
+- Replace the names *env_nome* and *env_var* to create your variable.
 
-#### Listar os softwares em execução (PID e cmd) em um channel do Slack
+#### List running software (PID and cmd) in a Slack channel
 
-- Você deve primeiro criar um novo channel no Slack.
-- Configure o app Incoming WebHooks em *Channel Settings* e *Add apps...*
-- Escolha um channel para aplicar a adição do WebHook e clique em *Add Incoming WebHokks integration*
-- Copie a url do Webhook que vai aparecer
-- No script *slack_service3.py* cole a url do Webhook em *SLACK_DEBUG_URL*
-- Coloque o nome do channel que você deseja usar em *SLACK_DEBUG_CHANNEL*
+- You must first create a new channel in Slack.
+- Configure the Incoming WebHooks app on *Channel Settings* and *Add apps...*
+- Choose a channel to apply the WebHook addition and click *Add Incoming WebHokks integration*
+- Copy the webhook url that will appear.
+- At the script *slack_service3.py* paste the webhook url into *SLACK_DEBUG_URL*
+- Put the name of the channel you want to use in *SLACK_DEBUG_CHANNEL*
 
-- Para rodar o script python, digite o comando a seguir pelo terminal:
+- To run the python script, type the following command at the terminal:
 
 ```
     python slack_service3.py
 ```
 
-- Entre no seu channel pelo slack e você verá a mensagem com os softwares em execução
+- Enter your channel via slack and you will see the message with running software.
