@@ -1,36 +1,36 @@
-# Microservice Calculator in Golang with Dockerfile
+# Microservice Calculator in Golang using Docker/Dockerfile
 
 ## Instruções
 
-- Acesse o diretório do projeto e digite o comando:
+- Access the project directory and type the following command:
 
 ``` 
     docker build -t calculator .
 ```
 
-- Para conseguir rodar o script bash, digite o comando:
+- To run the bash script, type in the terminal:
 
 ``` 
     chmod a+x script_run_microservice.sh
 ``` 
 
-- Este comando dará a permissão necessária para rodar o script bash
+- This command give the permission to run the bash script:
 
-- Agora você já pode rodar o comando a seguir e a calculadora em Golang estará disponível:
+- Now, you can to run the following command and the golang calculator will be available:
 
 ``` 
     ./script_run_microservice.sh
 ```
 
-- Ao rodar, você terá 3 opções:
+- To run, you will 3 options:
 
-*1 - Iniciar a calculadora*
+*1 - Start the calculator*
 
-*2 - Parar a calculadora*
+*2 - Stop the calculator*
 
-*3 - Verificar o status da calculadora (RUNNING | NOT RUNNING)*
+*3 - To check the calculator status (RUNNING | NOT RUNNING)*
 
-### Endpoints disponíveis
+### Available Endpoints
 
 #### Sum
 
@@ -62,6 +62,6 @@
     http://localhost:8080/calc/history
 ```
 
-- *firstNumber* corresponde ao primeiro número a ser calculado
+- *firstNumber* matches the first number to be calculated
 
-- *secondNumber* corresponde ao segundo número a ser calculado
+- *secondNumber* matches the second number to be calculated
