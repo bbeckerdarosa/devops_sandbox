@@ -1,12 +1,12 @@
-# Deploy your Go microservice on GCP
+# Deploy Microservice in Golang on GCP
 
-## Instruções
+## Instructions
 
-- Você deverá ter instalado *SDK gcloud* e *Packer*
+- You should to have install *SDK gcloud* and *Packer*
 
 ### App Engine
 
-- Dentro da pasta *app-engine*, abra o terminal e digite os comandos, um depois do outro:
+- Inside folder *app-engine*, to open the terminal and type the following commands below:
 
 ```
     gcloud init
@@ -16,53 +16,53 @@
     gcloud app deploy app.yaml
 ```
 
-- O serviço estará disponivel em:
+- The service will be available in:
 
 ```
     {your_instance_URL}/calc/{operation}/{firstNumber}/{secondNumber}
 ```
 
-e
+and
 
 ```
     {your_instance_URL}/calc/history
 ```
 
-- Os valores referentes a *operation* são: ```sum```, ```sub```, ```mult``` e ```div```
+- The values of *operation* are: ```sum```, ```sub```, ```mult``` and ```div```
 
 ### Compute Engine with Load Balancer
 
-- Para buildar a imagem GCP com o Packer, você deve fazer o download da sua credencial da GCP em formato JSON. Vá até ```API's e Services```, ```credentials``` e crie uma nova chave ```Service account key```.
+- To build the GCP image with Packer, you should to do the download of your GCP credential in JSON format. To go ```API's and Services```, ```credentials``` and to create one new key ```Service account key```.
 
-- Dentro da pasta principal do projeto, abra o terminal e digite o comando:
+- Inside principal project folder, to open the terminal and type the following command:
 
 ```
     packer build -var 'project_id={your_id_project}' -var 'account_file={your_key_file}.json' -var 'ssh_username={your_username}' bake-microservice.json
 ```
 
-- A imagem packer começará a ser construída.
-- Vá até ```Network```, ```Firewall rules``` e crie uma regra habilitando a porta 8080 com o protocolo TCP para garantir que somente esta porta será acessada.
+- The packer image will to start built.
+- To go in ```Network```, ```Firewall rules``` and to create a rule enabling the port 8080 with TCP protocol to ensure only this port will be accessed.
 
-- Agora você deverá ir até ```Instance template``` e criar um modelo de instância a partir da imagem GCP criada com o Packer.
+- Now, you should to go in ```Instance template``` and to create a instance model from GCP image to create with Packer.
 
-- Vá ate ```Instance groups``` e crie um grupo de instâncias gerenciadas que permitem operar uma aplicação em VM's idênticas.
+- To go in ```Instance groups``` and to create a instance group managed to allow to operate an application on identical Virtual Machine.
 
-- Crie um ```Load Balancing``` TCP para fazer o balanceamento automático para os grupos de instâncias.
+- To create a ```Load Balancing``` TCP to do the automatic balancing to instance groups.
 
-- O microsserviço estará disponível em: 
+- The microservice will be available in: 
 
 ```
     {your_instance_URL_external}:8080/calc/{operation}/{firstNumber}/{secondNumber}
 ```
 
-- Os valores referentes a *operation* são: ```sum```, ```sub```, ```mult``` e ```div```
+- The reference values of *operation* are: ```sum```, ```sub```, ```mult``` and ```div```
 
-- Para verificar o histórico do microsserviço, acesse:
+- To check the history of microservice, access:
 
 ```
     {your_instance_URL_external}:8080/calc/history
 ```
 
-## Apresentação
+## Presentation
 
 [Video](https://drive.google.com/file/d/1Q76TMeeir_f8OWz5QEWdnC4saM9A_s4e/view)
