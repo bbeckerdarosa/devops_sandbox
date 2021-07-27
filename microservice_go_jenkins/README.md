@@ -1,40 +1,40 @@
-# Pipeline Jenkins to bake image with Packer and deploy microservice in Golang
+# Pipeline Jenkins to bake image with Packer and deploy Microservice in Golang
 
-### Ferramentas que precisam ser instaladas antes:
+### Tools to need to be installed first:
 
 - [Packer](https://www.packer.io/)
 - [Docker](https://www.docker.com/)
 - [Jenkins](https://jenkins.io/)
 
-### Instruções
+### Instructions
 
-- Na pasta onde você colocou o .war do Jenkins, rode o comando: 
+- In folder where you to put the jenkins .war type the following command: 
 
 ```
     java -jar jenkins.war --httpPort=8180
 ```
 
-- O Jenkins estará disponível em *http://localhost:8180/*
+- The Jenkins will be available in *http://localhost:8180/*
 
-- No Jenkins, você deverá criar 2 pipelines:
+- At the Jenkins, you should to create 2 pipelines:
 
 #### Bake
-- Responsável por preparar uma imagem Docker provisionada pelo Packer.
+- Responsable to prepare an Docker image provisioned by Packer.
 
-- Clique na opção GitHub Project e insira a url do repositório privado do github *https://github.com/barbbecker/devops_sandbox.git*
-- Copie o script do Bake/Jenkinsfile e cole na opção "Pipeline script".
-- No stage de Preparação, o jenkins fará o clone do repositório Github.
-- No stage de Bake, o jenkins fará o bake da imagem Docker com Packer.
+- To click at option ```Github Project``` and insert the url of private repository github *https://github.com/bbeckerdarosa/devops_sandbox.git*
+- To copy the script of Bake/Jenkinsfile and paste at option "Pipeline script".
+- At the preparetion stage, the Jenkins will make the clone Github repository.
+- At the Bake stage, the Jenkins will make the image bake Docker with Packer.
 
 #### Launch
-- Responsável por fazer o deploy do microsserviço em Golang.
+- Responsable to do the microservice deploy in Golang.
 
-- Copie o script do Launch/Jenkinsfile e cole na opção "Pipeline script".
-- No stage de Launch, o jenkins fará o deploy do microsserviço em Golang com o nome da imagem criada na etapa de Bake.
+- To copy the script Launch/Jenkinsfile and paste at the option "Pipeline script".
+- At the Launch stage, the Jenkins will make the microservice deploy in Golang with image name to create in Bake step.
 
-- O microsserviço estará disponível em *http://localhost:8080/*
+- The microservice will be available in *http://localhost:8080/*
 
-### Endpoints disponíveis
+### Available Endpoints
 
 #### Sum
 
@@ -66,6 +66,6 @@
     http://localhost:8080/calc/history
 ```
 
-- *firstNumber* corresponde ao primeiro número a ser calculado
+- *firstNumber* matches the first number to be calculated
 
-- *secondNumber* corresponde ao segundo número a ser calculado
+- *secondNumber* matches the second number to be calculated
